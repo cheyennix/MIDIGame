@@ -1,28 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://soah7rg8y8y2"]
+[gd_scene load_steps=3 format=3 uid="uid://soah7rg8y8y2"]
 
 [ext_resource type="PackedScene" uid="uid://uv715wcoeo8g" path="res://scenes/Debug_Testing/scn_midi_input_test.tscn" id="1_le6ld"]
+[ext_resource type="PackedScene" uid="uid://dgirsnvvl4lka" path="res://scenes/Debug_Testing/scn_playershoot.tscn" id="2_1hpga"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="MidiInputTest" parent="." instance=ExtResource("1_le6ld")]
+position = Vector2(48, 238)
 scale = Vector2(1.5, 1.5)
+player_shoot_scene = ExtResource("2_1hpga")
 
 [node name="C" parent="MidiInputTest" index="0"]
 position = Vector2(-162.667, 5.33333)
 
 [node name="C_Sharp" parent="MidiInputTest" index="1"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 position = Vector2(-142, -25)
 
 [node name="D" parent="MidiInputTest" index="2"]
 position = Vector2(-117.333, 5.33333)
 
 [node name="D_Sharp" parent="MidiInputTest" index="3"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 position = Vector2(-94.667, -25)
 
 [node name="E" parent="MidiInputTest" index="4"]
@@ -32,25 +31,18 @@ position = Vector2(-71.6667, 5.33333)
 position = Vector2(-22.6667, 5.33333)
 
 [node name="F_Sharp" parent="MidiInputTest" index="6"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 position = Vector2(-1, -25)
 
 [node name="G" parent="MidiInputTest" index="7"]
 position = Vector2(21.3333, 6)
 
 [node name="G_Sharp" parent="MidiInputTest" index="8"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 position = Vector2(44.667, -25)
 
 [node name="A" parent="MidiInputTest" index="9"]
 position = Vector2(65.6666, 7)
-scale = Vector2(0.611112, 1.00667)
 
 [node name="A_Sharp" parent="MidiInputTest" index="10"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 position = Vector2(92.667, -25)
 
 [node name="B" parent="MidiInputTest" index="11"]

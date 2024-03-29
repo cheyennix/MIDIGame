@@ -8,61 +8,71 @@ script = ExtResource("1_qtume")
 note_array = [NodePath("C"), NodePath("C_Sharp"), NodePath("D"), NodePath("D_Sharp"), NodePath("E"), NodePath("F"), NodePath("F_Sharp"), NodePath("G"), NodePath("G_Sharp"), NodePath("A"), NodePath("A_Sharp"), NodePath("B")]
 
 [node name="C" type="Sprite2D" parent="."]
-position = Vector2(-271, 4)
+position = Vector2(-136, 11.3333)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="C_Sharp" type="Sprite2D" parent="."]
-position = Vector2(-226, -27)
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(-115.333, -19)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="D" type="Sprite2D" parent="."]
-position = Vector2(-181, 4)
+position = Vector2(-90.666, 11.3333)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="D_Sharp" type="Sprite2D" parent="."]
-position = Vector2(-136, -27)
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(-68, -19)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="E" type="Sprite2D" parent="."]
-position = Vector2(-95, 4)
+position = Vector2(-44.9997, 11.3333)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="F" type="Sprite2D" parent="."]
-position = Vector2(-46, 4)
+position = Vector2(4.00031, 11.3333)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="F_Sharp" type="Sprite2D" parent="."]
-position = Vector2(-1, -31)
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(25.667, -19)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="G" type="Sprite2D" parent="."]
-position = Vector2(42, 4)
+position = Vector2(48.0003, 12)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="G_Sharp" type="Sprite2D" parent="."]
-position = Vector2(88, -31)
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(71.334, -19)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="A" type="Sprite2D" parent="."]
-position = Vector2(131, 4)
-scale = Vector2(0.6, 1)
+position = Vector2(92.3336, 13)
+scale = Vector2(0.611112, 1.00667)
 texture = ExtResource("2_arjmm")
 
 [node name="A_Sharp" type="Sprite2D" parent="."]
-position = Vector2(177, -31)
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(119.334, -19)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")
 
 [node name="B" type="Sprite2D" parent="."]
-position = Vector2(222, 4)
+position = Vector2(135.334, 14)
 scale = Vector2(0.6, 1)
 texture = ExtResource("2_arjmm")

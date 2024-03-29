@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://irheg7e1fqu6"]
+
+[ext_resource type="Script" path="res://components/scr_translate_linear.gd" id="1_22ckb"]
+
+[node name="CompTranslate" type="Node"]
+script = ExtResource("1_22ckb")
