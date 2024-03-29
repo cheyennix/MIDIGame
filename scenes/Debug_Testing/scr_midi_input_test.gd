@@ -13,19 +13,25 @@ func _input(input_event):
 		_toggle_note_visibility(input_event)
 
 func _toggle_note_visibility(midi_event: InputEventMIDI):
+	#Pitch check variable corresponds to the pitch of the inputed note. 0 is C, 1 is C#, 11 is G, etc.
 	var pitch_check = midi_event.pitch % 12
 	
-	if(midi_event.message == 9):
-		if(pitch_check >= 0):
-			note_array[pitch_check].modulate = Color8(0, 255, 0, 255)
-		
-	elif(midi_event.message == 8):
+	#If input is being released (velocity is 0) do this
+	if(midi_event.velocity == 0):
 		if(pitch_check >= 0):
 			if(pitch_check == 1 || pitch_check == 3 || pitch_check == 6 
 			|| pitch_check == 8 || pitch_check == 10):
 				note_array[pitch_check].modulate = Color8(0, 0, 0, 255)
 			else:
 				note_array[pitch_check].modulate = Color8(255, 255, 255, 255)
+	
+	#Otherwise, if input is being pressed do this
+	elif(midi_event.velocity > 0):
+		#Check
+		if(pitch_check >= 0):
+			note_array[pitch_check].modulate = Color8(0, 255, 0, 255)
+		
+	
 	
 
 func _print_midi_info(midi_event: InputEventMIDI):
