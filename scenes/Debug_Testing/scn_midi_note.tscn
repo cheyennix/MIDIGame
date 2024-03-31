@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt2x42j83wihx"]
+
+[ext_resource type="Texture2D" uid="uid://cfgxlyh8h2qqq" path="res://assets/spr_note.png" id="1_brj56"]
+[ext_resource type="Script" path="res://scenes/Debug_Testing/scr_midi_note.gd" id="2_av13p"]
+[ext_resource type="PackedScene" uid="uid://ck0e1a5x41yqu" path="res://scenes/Debug_Testing/scn_basicgun.tscn" id="3_m1qt7"]
+
+[node name="ScnMidiNote" type="Node2D" node_paths=PackedStringArray("spr", "child_to_activate")]
+script = ExtResource("2_av13p")
+spr = NodePath("Sprite_MidiNote")
+child_to_activate = NodePath("ScnBasicgun")
+
+[node name="Sprite_MidiNote" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 1)
+texture = ExtResource("1_brj56")
+
+[node name="ScnBasicgun" parent="." instance=ExtResource("3_m1qt7")]
+
+[connection signal="activate_child" from="." to="ScnBasicgun" method="_on_scn_midi_note_activate_child"]

@@ -1,7 +1,6 @@
 extends Node
 
-@export var note_array: Array[Sprite2D]
-@export var player_shoot_scene: PackedScene
+@export var note_array: Array[scr_midi_note]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,20 +17,14 @@ func _toggle_note_visibility(midi_event: InputEventMIDI):
 	if(midi_event.pitch != 0):
 		var pitch_check = midi_event.pitch % 12
 		
-		#If input is being released (velocity is 0) do this
-		if(midi_event.velocity == 0):
-			if(pitch_check == 1 || pitch_check == 3 || pitch_check == 6 
-			|| pitch_check == 8 || pitch_check == 10):
-				note_array[pitch_check].modulate = Color8(0, 0, 0, 255)
-			else:
-				note_array[pitch_check].modulate = Color8(255, 255, 255, 255)
-		
-		#Otherwise, if input is being pressed do this
-		elif(midi_event.velocity > 0):
+		#If input is being pressed, activate its effect
+		if(midi_event.velocity > 0):
 			#Check
-			note_array[pitch_check].modulate = Color8(0, 255, 0, 255)
-			#Spawn shot at pressed note
-			_spawn_player_shot(note_array[pitch_check])
+			note_array[pitch_check]._try_activate()
+		
+		#Otherwise, if input is being released (velocity is 0) do this
+		elif(midi_event.velocity == 0):
+			note_array[pitch_check]._deactivate()
 		
 func _print_midi_info(midi_event: InputEventMIDI):
 	print(midi_event)
@@ -39,7 +32,3 @@ func _print_midi_info(midi_event: InputEventMIDI):
 	print("Pitch " + str(midi_event.pitch))
 	print("Velocity " + str(midi_event.velocity))
 	
-func _spawn_player_shot(note: Sprite2D):
-	var player_shot = player_shoot_scene.instantiate()
-	player_shot.position = note.position
-	add_child(player_shot)

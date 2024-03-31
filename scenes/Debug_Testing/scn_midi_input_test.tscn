@@ -1,78 +1,89 @@
 [gd_scene load_steps=3 format=3 uid="uid://uv715wcoeo8g"]
 
 [ext_resource type="Script" path="res://scenes/Debug_Testing/scr_midi_input_test.gd" id="1_qtume"]
-[ext_resource type="Texture2D" uid="uid://cfgxlyh8h2qqq" path="res://assets/spr_note.png" id="2_arjmm"]
+[ext_resource type="PackedScene" uid="uid://bt2x42j83wihx" path="res://scenes/Debug_Testing/scn_midi_note.tscn" id="2_3rqti"]
 
 [node name="scn_midi_input_test" type="Node2D" node_paths=PackedStringArray("note_array")]
 script = ExtResource("1_qtume")
-note_array = [NodePath("C"), NodePath("C_Sharp"), NodePath("D"), NodePath("D_Sharp"), NodePath("E"), NodePath("F"), NodePath("F_Sharp"), NodePath("G"), NodePath("G_Sharp"), NodePath("A"), NodePath("A_Sharp"), NodePath("B")]
+note_array = [NodePath("C"), NodePath("C#"), NodePath("D"), NodePath("D#"), NodePath("E"), NodePath("F"), NodePath("F#"), NodePath("G"), NodePath("G#"), NodePath("A"), NodePath("A#"), NodePath("B")]
 
-[node name="C" type="Sprite2D" parent="."]
-position = Vector2(-136, 11.3333)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+[node name="C" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(-225, 0)
+initial_color = Color(1, 1, 1, 1)
 
-[node name="C_Sharp" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="C#" parent="." instance=ExtResource("2_3rqti")]
 z_index = 1
-position = Vector2(-115.333, -19)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+position = Vector2(-199, -34)
+note_number = 1
+initial_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
-[node name="D" type="Sprite2D" parent="."]
-position = Vector2(-90.666, 11.3333)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
-
-[node name="D_Sharp" type="Sprite2D" parent="."]
+[node name="Sprite_MidiNote" parent="C#" index="0"]
 modulate = Color(0, 0, 0, 1)
+
+[node name="D" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(-174, 0)
+note_number = 2
+initial_color = Color(1, 1, 1, 1)
+
+[node name="D#" parent="." instance=ExtResource("2_3rqti")]
 z_index = 1
-position = Vector2(-68, -19)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+position = Vector2(-146, -34)
+note_number = 3
 
-[node name="E" type="Sprite2D" parent="."]
-position = Vector2(-44.9997, 11.3333)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
-
-[node name="F" type="Sprite2D" parent="."]
-position = Vector2(4.00031, 11.3333)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
-
-[node name="F_Sharp" type="Sprite2D" parent="."]
+[node name="Sprite_MidiNote" parent="D#" index="0"]
 modulate = Color(0, 0, 0, 1)
+
+[node name="E" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(-124, 0)
+note_number = 4
+initial_color = Color(1, 1, 1, 1)
+
+[node name="F" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(-76, 0)
+note_number = 5
+initial_color = Color(1, 1, 1, 1)
+
+[node name="F#" parent="." instance=ExtResource("2_3rqti")]
 z_index = 1
-position = Vector2(25.667, -19)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+position = Vector2(-53, -34)
+note_number = 6
 
-[node name="G" type="Sprite2D" parent="."]
-position = Vector2(48.0003, 12)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
-
-[node name="G_Sharp" type="Sprite2D" parent="."]
+[node name="Sprite_MidiNote" parent="F#" index="0"]
 modulate = Color(0, 0, 0, 1)
+
+[node name="G" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(-26, 0)
+note_number = 7
+initial_color = Color(1, 1, 1, 1)
+
+[node name="G#" parent="." instance=ExtResource("2_3rqti")]
 z_index = 1
-position = Vector2(71.334, -19)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+position = Vector2(0, -34)
+note_number = 8
 
-[node name="A" type="Sprite2D" parent="."]
-position = Vector2(92.3336, 13)
-scale = Vector2(0.611112, 1.00667)
-texture = ExtResource("2_arjmm")
-
-[node name="A_Sharp" type="Sprite2D" parent="."]
+[node name="Sprite_MidiNote" parent="G#" index="0"]
 modulate = Color(0, 0, 0, 1)
-z_index = 1
-position = Vector2(119.334, -19)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
 
-[node name="B" type="Sprite2D" parent="."]
-position = Vector2(135.334, 14)
-scale = Vector2(0.6, 1)
-texture = ExtResource("2_arjmm")
+[node name="A" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(21, 0)
+note_number = 9
+initial_color = Color(1, 1, 1, 1)
+
+[node name="A#" parent="." instance=ExtResource("2_3rqti")]
+z_index = 1
+position = Vector2(49, -34)
+note_number = 10
+
+[node name="Sprite_MidiNote" parent="A#" index="0"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="B" parent="." instance=ExtResource("2_3rqti")]
+position = Vector2(68, 0)
+note_number = 11
+initial_color = Color(1, 1, 1, 1)
+
+[editable path="C#"]
+[editable path="D#"]
+[editable path="F#"]
+[editable path="G#"]
+[editable path="A#"]
