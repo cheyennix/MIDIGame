@@ -18,8 +18,8 @@ signal activate_child
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	#child_to_activate.connect(_on_scn_midi_note_activate_child, )
-
+	if(child_to_activate != null):
+		activate_child.connect(child_to_activate._on_scn_midi_note_activate_child)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

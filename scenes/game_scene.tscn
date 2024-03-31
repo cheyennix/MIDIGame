@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://soah7rg8y8y2"]
+[gd_scene load_steps=3 format=3 uid="uid://soah7rg8y8y2"]
 
 [ext_resource type="PackedScene" uid="uid://uv715wcoeo8g" path="res://scenes/Debug_Testing/scn_midi_input_test.tscn" id="1_le6ld"]
+[ext_resource type="Script" path="res://scenes/DEBUG_ITEM_GIVER.gd" id="1_x1cnk"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="DEBUG_ITEM_GIVER" type="Node2D" parent="."]
+script = ExtResource("1_x1cnk")
 
 [node name="scn_midi_input_test" parent="." instance=ExtResource("1_le6ld")]
 position = Vector2(79, 284)

@@ -1,8 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck0e1a5x41yqu"]
 
-[ext_resource type="Script" path="res://scenes/Debug_Testing/scr_basicgun.gd" id="1_3xqas"]
 [ext_resource type="PackedScene" uid="uid://dgirsnvvl4lka" path="res://scenes/Debug_Testing/scn_playershoot.tscn" id="2_g1bwn"]
 
+[sub_resource type="GDScript" id="GDScript_jk2g6"]
+script/source = "extends Node2D
+
+@export var player_shoot_scene: PackedScene
+
+func _on_scn_midi_note_activate_child():
+	_spawn_player_shot()
+
+
+func _spawn_player_shot():
+	var player_shot = player_shoot_scene.instantiate()
+	player_shot.position = position
+	add_child(player_shot)
+"
+
 [node name="ScnBasicgun" type="Node2D"]
-script = ExtResource("1_3xqas")
+script = SubResource("GDScript_jk2g6")
 player_shoot_scene = ExtResource("2_g1bwn")

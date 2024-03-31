@@ -14,5 +14,3 @@ scale = Vector2(0.6, 1)
 texture = ExtResource("1_brj56")
 
 [node name="ScnBasicgun" parent="." instance=ExtResource("3_m1qt7")]
-
-[connection signal="activate_child" from="." to="ScnBasicgun" method="_on_scn_midi_note_activate_child"]
